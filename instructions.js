@@ -5,6 +5,7 @@ const numberContainer = document.getElementById("step_number")
 
 const previousStepButton = document.getElementById("previous_step")
 const nextStepButton = document.getElementById("next_step")
+const startButton = document.getElementById("start_button")
 const closeButton = document.getElementById("close_button")
 
 const stepOne = document.querySelector(".selector_container")
@@ -47,10 +48,12 @@ const handleStep = () => {
   if(step === 1) {
     previousStepButton.classList.add("hidden")
   } else if (step === titles.length) {
-    nextStepButton.classList.add("hidden")
+    nextStepButton.classList.add("delete")
+    startButton.classList.remove("delete")
   } else {
     previousStepButton.classList.remove("hidden")
-    nextStepButton.classList.remove("hidden")
+    nextStepButton.classList.remove("delete")
+    startButton.classList.add("delete")
   }
 
   titleContainer.innerHTML = `${stepTitle}`
@@ -73,7 +76,6 @@ const elementAnimate = () => {
 
   prevElement?.classList.remove("highlight")
   element?.classList.add("highlight")
-
   // prevElement?.animate([
   //   { zIndex: 10 },
   //   { zIndex: 0 }
@@ -90,11 +92,10 @@ const elementAnimate = () => {
   //   delay: 100,
   //   fill: 'forwards'
   // })
-
-
 }
 
 elementAnimate()
 previousStepButton.addEventListener("click", previousStep)
 nextStepButton.addEventListener("click", nextStep)
+startButton.addEventListener("click", closeStep)
 closeButton.addEventListener("click", closeStep)
