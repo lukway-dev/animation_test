@@ -109,7 +109,7 @@ button {
   font: italic 300 40px 'Montserrat', sans-serif;
   position: absolute;
   opacity: 0;
-  animation: appear-disappear 2s 1s ease-out;
+  /* animation: appear-disappear 2s 1s ease-out; */
 }
 .arrow span {
   margin-right: 10px;
