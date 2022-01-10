@@ -27,8 +27,10 @@ body {
 }
 
 button {
+  border: unset;
   padding: 0px;
   cursor: pointer;
+  transition: background-color .2s, transform .2s;
 }
 
 .container {
@@ -90,7 +92,6 @@ button {
   height: 50px;
   border: 2px solid var(--gray-light);
   border-radius: 10px;
-  transition: transform .2s;
 }
 .color_button:hover{
   transform: scale(1.15);
@@ -138,19 +139,82 @@ button {
   left: 0;
   z-index: 1;
 }
-/* .arrow_icon-path {
-  width: 30px;
-  position: relative;
-  overflow: hidden;
-} */
 
-/* .arrow_icon_container::after {
-  content: "";
-  width: 30px;
+.step_container {
+  width: 100%;
   height: 100%;
-  background: var(--white);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-} */
+  top: 0;
+  left: 0;
+}
+.step_card {
+  width: 450px;
+  height: 250px;
+  border: 2px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 15px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--gray);
+  font: normal 600 28px 'Montserrat', sans-serif;
+  position: relative;
+}
+.step_card p{
+  margin: 0;
+  font-size: 20px;
+}
+.step_card h3{
+  margin: .5rem;
+}
+
+.step_button_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.step_button {
+  width: 70px;
+  height: 70px;
+  border: 2px solid var(--gray-light);
+  border-radius: 10px;
+  background: var(--cian-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: 32px;
+}
+.step_button:hover {
+  background: var(--cian-3);
+  transform: scale(1.1);
+}
+.step_button:active {
+  transform: scale(.9);
+}
+
+.step_close {
+  width: 25px;
+  height: 25px;
+  background: unset;
+  color: var(--gray);
+  font-size: 32px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: color .2s;
+}
+.step_close:hover {
+  color: var(--gray-dark);
+}
 
 .bottom_bar {
   width: 1466px;
@@ -173,7 +237,7 @@ button {
   transform: rotate(-90deg);
 }
 
-.price_container{
+.budget_container{
   width: 1357px;
   height: 100%;
   border: 2px solid var(--gray-light);
@@ -185,13 +249,13 @@ button {
   align-items: center;
 }
 
-.price_text {
+.budget_text {
   color: var(--gray)
 }
-.price_value {
+.budget_value {
   color: var(--cian-2)
 }
-.total_price {
+.total_budget {
   font-weight: bold;
 }
 
@@ -230,7 +294,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color .2s, transform .2s;
 }
 .pdf_button:hover {
   background: var(--white-dark);
@@ -254,6 +317,13 @@ button {
 
 .generate_pdf span {
   font-weight: bold;
+}
+
+.hidden {
+  visibility: hidden;
+}
+.delete {
+  display: none;
 }
 
 @keyframes appear {
