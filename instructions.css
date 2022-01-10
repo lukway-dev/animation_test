@@ -208,7 +208,7 @@ button {
   color: var(--gray);
   font-size: 32px;
   position: absolute;
-  top: 15px;
+  top: 10px;
   right: 15px;
   transition: color .2s;
 }
@@ -324,6 +324,13 @@ button {
 }
 .delete {
   display: none;
+}
+.highlight {
+  z-index: 10;
+}
+.highlight .arrow {
+  transition: opacity .5s;
+  opacity: 1;
 }
 
 @keyframes appear {

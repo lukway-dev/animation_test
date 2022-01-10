@@ -24,14 +24,17 @@ const elements = [
 ]
 
 let step = 1
+let prevStep
 let stepTitle = "Color Selection"
 
 const previousStep = () => {
+  prevStep = step
   step = step - 1
   handleStep()
 }
 
 const nextStep = () => {
+  prevStep = step
   step = step + 1
   handleStep()
 }
@@ -52,22 +55,46 @@ const handleStep = () => {
 
   titleContainer.innerHTML = `${stepTitle}`
   numberContainer.innerHTML = `${step}`
+
+  elementAnimate()
 }
 
 const closeStep = () => {
   stepsContainer.classList.add("delete")
-}
 
-const animation = (element) => {
-  element.animate([
-    { zIndex: 0 },
-    { zIndex: 100}
-  ], {
-    duration: 1000,
-    fill: 'forwards'
+  elements.forEach(element => {
+    element.classList.remove("highlight")
   })
 }
 
+const elementAnimate = () => {
+  let prevElement = elements[prevStep - 1]
+  let element = elements[step - 1]
+
+  prevElement?.classList.remove("highlight")
+  element?.classList.add("highlight")
+
+  // prevElement?.animate([
+  //   { zIndex: 10 },
+  //   { zIndex: 0 }
+  // ], {
+  //   duration: 100,
+  //   fill: 'forwards'
+  // })
+
+  // element?.animate([
+  //   { zIndex: 0 },
+  //   { zIndex: 100}
+  // ], {
+  //   duration: 100,
+  //   delay: 100,
+  //   fill: 'forwards'
+  // })
+
+
+}
+
+elementAnimate()
 previousStepButton.addEventListener("click", previousStep)
 nextStepButton.addEventListener("click", nextStep)
 closeButton.addEventListener("click", closeStep)
