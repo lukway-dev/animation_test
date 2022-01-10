@@ -93,6 +93,9 @@ button {
 .color_button:hover{
   transform: scale(1.15);
 }
+.color_button:active{
+  transform: scale(.95);
+}
 
 .arrow {
   height: 50px;
@@ -133,11 +136,11 @@ button {
   left: 0;
   z-index: 1;
 }
-.arrow_icon-path {
+/* .arrow_icon-path {
   width: 30px;
   position: relative;
   overflow: hidden;
-}
+} */
 
 /* .arrow_icon_container::after {
   content: "";
