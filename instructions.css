@@ -109,7 +109,6 @@ button {
   font: italic 300 40px 'Montserrat', sans-serif;
   position: absolute;
   opacity: 0;
-  /* animation: appear-disappear 2s 1s ease-out; */
 }
 .arrow span {
   margin-right: 10px;
@@ -118,11 +117,6 @@ button {
 .arrow div {
   margin: 10px;
   display: flex;
-}
-
-.arrow_icon_container {
-  position: relative;
-  overflow: hidden;
 }
 
 .arrow_icon {
@@ -341,29 +335,5 @@ button {
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes appear-disappear {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes icon_animate {
-  0% {
-    fill: var(--cian-1);
-  }
-  50% {
-    fill: var(--white);
-  }
-  100% {
-    fill: var(--cian-1);
   }
 }
