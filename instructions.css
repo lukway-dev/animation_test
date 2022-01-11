@@ -146,11 +146,11 @@ button {
   left: 0;
 }
 .step_card {
-  width: 450px;
-  height: 250px;
+  width: 452px;
+  height: 254px;
   border: 2px solid var(--gray-light);
   border-radius: 10px;
-  padding: 15px;
+  padding: 45px;
   background: var(--white);
   display: flex;
   flex-direction: column;
@@ -165,6 +165,7 @@ button {
 }
 .step_card h3{
   margin: .5rem;
+  font-size: 34px;
 }
 
 .step_button_container {
@@ -177,10 +178,10 @@ button {
 }
 
 .step_button {
-  height: 73px;
+  height: 60px;
   border: 2px solid var(--gray-light);
   border-radius: 10px;
-  padding: 15px 20px;
+  padding: 15px 15px;
   background: var(--cian-2);
   display: flex;
   justify-content: center;
@@ -247,6 +248,10 @@ button {
 
 .budget_text {
   color: var(--gray)
+}
+.budget_dollar_sign {
+  margin-right: -8px;
+  color: var(--cian-2)
 }
 .budget_value {
   color: var(--cian-2)
