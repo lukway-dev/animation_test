@@ -115,9 +115,10 @@
           </div>
         </div>
       </div>
-      <div class="pdf_container">
-        <button class="pdf_button">
-          <img class="pdf_image" src="./images/pdf_icon.png" alt="PDF">
+
+      <div id="pdf_container" class="extra_button_container">
+        <button class="extra_button">
+          <img class="extra_button_image" src="./images/pdf_icon.png" alt="PDF">
         </button>
         <div class="arrow">
           <img class="arrow_icon" src="./images/arrow.svg" alt="arrow">
@@ -127,12 +128,23 @@
           </div>
         </div>
       </div>
+
+      <div class="extra_button_container">
+        <button id="open_button" class="extra_button">
+          <img class="extra_button_image" src="./images/information.png" alt="PDF">
+        </button>
+      </div>
     </div>
   </div>
   <div class="step_container">
     <div class="step_card">
       <p>Step <span id="step_number">1</span></p>
       <h3 id="step_title">Color Selection</h3>
+      <div class="step_4 delete">
+        <img class="step_4_background" src="./images/fondo del mueble.svg">
+        <img class="step_4_sofa" src="./images/sofa.png">
+        <img class="step_4_cursor" src="./images/cursor.svg">
+      </div>
       <div class="step_button_container">
         <button id="previous_step" class="step_button hidden">
           <i class="fas fa-arrow-left"></i>
@@ -144,9 +156,6 @@
           Start
         </button>
       </div>
-      <button id="close_button" class="step_close">
-        <i class="fas fa-times"></i>
-      </button>
     </div>
   </div>
   <script src="./instructions.js"></script>

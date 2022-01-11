@@ -150,7 +150,7 @@ button {
   height: 254px;
   border: 2px solid var(--gray-light);
   border-radius: 10px;
-  padding: 45px;
+  padding: 35px;
   background: var(--white);
   display: flex;
   flex-direction: column;
@@ -169,15 +169,15 @@ button {
 }
 
 .step_button_container {
-  width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
+  margin: 0 80px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .step_button {
+  width: fit-content;
   height: 60px;
   border: 2px solid var(--gray-light);
   border-radius: 10px;
@@ -213,10 +213,45 @@ button {
   color: var(--gray-dark);
 }
 
+.step_4 {
+  position: relative;
+}
+.step_4_background {
+  height: 100px;
+}
+.step_4_sofa {
+  height: 90px;
+  position: absolute;
+  top: 5px;
+  left: calc(50% - 45px);
+  animation: step_4_sofa 5s infinite;
+}
+.step_4_cursor {
+  height: 40px;
+  position: absolute;
+  top: calc(50%);
+  left: calc(50% - 13px);
+  animation: step_4_cursor 5s infinite;
+}
+.step_4_buttons {
+  width: 380px;
+  height: 60px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  column-gap: 20px;
+  position: absolute;
+  top: calc(100% + 20px);
+}
+.step_4_buttons #start_button{
+  width: 100%;
+}
+
 .bottom_bar {
-  width: 1466px;
   height: 89px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 20px;
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -267,25 +302,25 @@ button {
   background: var(--gray-light);
 }
 
-.pdf_container .arrow {
+.extra_button_container .arrow {
   flex-direction: column-reverse;
-  right: 0;
+  right: 110px;
   bottom: calc(100% + 20px);
   animation-delay: 5s;
 }
-.pdf_container .arrow div {
+.extra_button_container .arrow div {
   margin-right: 0;
 }
-.pdf_container .arrow span {
+.extra_button_container .arrow span {
   margin-right: 0;
   margin-left: 10px;
 }
-.pdf_container .arrow_icon {
+.extra_button_container .arrow_icon {
   align-self: flex-end;
   transform: rotate(-90deg) translateY(-30px);
 }
 
-.pdf_button {
+.extra_button {
   width: 89px;
   height: 89px;
   border: 2px solid var(--gray-light);
@@ -296,28 +331,15 @@ button {
   justify-content: center;
   align-items: center;
 }
-.pdf_button:hover {
+.extra_button:hover {
   background: var(--white-dark);
 }
-.pdf_button:active {
+.extra_button:active {
   transform: scale(.9);
 }
 
-
-.pdf_image {
+.extra_button_image {
   height: 100%;
-}
-
-.generate_pdf {
-  color: var(--white);
-  font: italic 300 40px 'Montserrat', sans-serif;
-  position: absolute;
-  bottom: calc(100% + 30px);
-  right: 0;
-}
-
-.generate_pdf span {
-  font-weight: bold;
 }
 
 .hidden {
@@ -340,5 +362,47 @@ button {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes step_4_sofa {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-80px);
+  }
+  60% {
+    transform: translateX(80px);
+  }
+  80% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes step_4_cursor {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(.8);
+  }
+  40% {
+    transform: scale(.8) translateX(-100px);
+  }
+  60% {
+    transform: scale(.8) translateX(100px);
+  }
+  80% {
+    transform: scale(.8) translateX(0);
+  }
+  100% {
+    transform: scale(1) translateX(0);
   }
 }
