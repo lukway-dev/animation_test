@@ -19,7 +19,7 @@ const titles = [
   "Color Selection",
   "Budget Generator",
   "Generate PDF",
-  "Hold click to move"
+  "Hold click to rotate"
 ]
 
 const elements = [

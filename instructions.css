@@ -373,10 +373,10 @@ button {
     transform: translateX(0);
   }
   40% {
-    transform: translateX(-80px);
+    transform: translateX(80px);
   }
   60% {
-    transform: translateX(80px);
+    transform: translateX(-80px);
   }
   80% {
     transform: translateX(0);
